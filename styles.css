@@ -63,7 +63,31 @@ header {
 .bimant-logo-ellipse {
   z-index: -1;
 }
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 1rem;
+}
 
+.instagram-box {
+  width: 100%;
+  height: 400px; /* Tamaño uniforme */
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.instagram-box iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 /* ========== LOGO INDEPENDIENTE ========== */
 .logo-independiente {
   top: 0;
