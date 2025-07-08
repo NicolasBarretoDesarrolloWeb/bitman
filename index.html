@@ -6,42 +6,16 @@
   <title>Bitman</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .header-S {
-      position: relative;
-      overflow: hidden;
-    }
 
-    .curva-header {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    .header-content {
-      position: relative;
-      z-index: 1;
-    }
-  </style>
 </head>
 <body>
 
   <!-- Header (Logo y Navbar) -->
   <header class="header-S flex items-center justify-between p-4 bg-white shadow">
 
-    <!-- Curva decorativa -->
-<svg class="curva-header" viewBox="0 0 600 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#000000; stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#7c3aed; stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <path d="M0,300 C200,280 400,180 600,0 L600,300 Z" fill="url(#grad1)" />
-</svg>
 
 
     <div class="header-content flex items-center justify-between w-full">
@@ -59,126 +33,397 @@
       </div>
 
       <!-- Menú de navegación -->
-      <nav class="navbar">
-        <div class="container">
-          <ul class="nav-links flex gap-6">
-            <li><a href="#servicios">Nosotros</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-          </ul>
-        </div>
-      </nav>
+       <nav class="navbar">
+      <ul id="menuNav" class="hidden md:flex flex-col md:flex-row gap-6 absolute md:static top-20 left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none rounded-b-xl md:rounded-none px-6 py-4 md:p-0 transition-all">
+        <li><a href="#" onclick="mostrarSeccion('nosotros')" class="text-gray-800 font-semibold hover:text-purple-500 transition">Nosotros</a></li>
+        <li><a href="#" onclick="mostrarSeccion('productos')" class="text-gray-800 font-semibold hover:text-purple-500 transition">Productos</a></li>
+        <li><a href="#" onclick="mostrarSeccion('proyectos')" class="text-gray-800 font-semibold hover:text-purple-500 transition">Trabajos</a></li>
+        <li><a href="#" onclick="mostrarSeccion('contacto')" class="text-gray-800 font-semibold hover:text-purple-500 transition">Contacto</a></li>
+      </ul>
+    </nav>
+
     </div>
   </header>
 
   <!-- Contenido principal -->
   <main>
     <!-- Slider -->
-    <section class="slider-container">
-      <button id="prevBtn" class="slider-btn prev">&laquo;</button>
-      <button id="nextBtn" class="slider-btn next">&raquo;</button>
+    <section id="nosotros" class="content-section">
 
-      <div class="slider">
-        <img src="imagenes/imagen1.jpg" alt="Metalurgia 1" class="active">
-        <div class="overlay active">
-          <h2 class="overlay-text">Metalurgia de precisión</h2>
-          <button class="btn-cotizar">Cotizar precios</button>
-        </div>
+  <!-- Slider -->
+  <div class="slider-container">
+    <button id="prevBtn" class="slider-btn prev">&laquo;</button>
+    <button id="nextBtn" class="slider-btn next">&raquo;</button>
 
-        <img src="imagenes/imagen2.jpg" alt="Metalurgia 2">
-        <div class="overlay">
-          <h2 class="overlay-text">Fabricación industrial</h2>
-          <button class="btn-cotizar">Cotizar precios</button>
-        </div>
+    <div class="slider">
+      <img src="imagenes/imagen1.jpg" alt="Metalurgia 1" class="active">
+      <div class="overlay active">
+        <h2 class="overlay-text">Metalurgia de precisión</h2>
+    <button class="btn-cotizar" onclick="mostrarSeccion('contacto')">Cotizar precios</button>
 
-        <img src="imagenes/imagen3.jpg" alt="Metalurgia 3">
-        <div class="overlay">
-          <h2 class="overlay-text">Soluciones a medida</h2>
-          <button class="btn-cotizar">Cotizar precios</button>
-        </div>
       </div>
-    </section>
 
-    <!-- Secciones de contenido -->
-  <section id="servicios" class="content-section servicios-section">
-  <div class="container">
-    <h2 class="section-title">¿QUIENES SOMOS?</h2>
-    <p class="frase-estilizada">
-      <em>“Nuestro enfoque es contribuir a la eficiencia, calidad, seguridad y sostenibilidad de los diferentes procesos.”</em>
+      <img src="imagenes/imagen2.jpg" alt="Metalurgia 2">
+      <div class="overlay">
+        <h2 class="overlay-text">Fabricación industrial</h2>
+       <button class="btn-cotizar" onclick="mostrarSeccion('contacto')">Cotizar precios</button>
+
+      </div>
+
+      <img src="imagenes/imagen3.jpg" alt="Metalurgia 3">
+      <div class="overlay">
+        <h2 class="overlay-text">Soluciones a medida</h2>
+        <<a href="contacto" class="btn-cotizar">Cotizar precios</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ¿Quiénes somos? -->
+<div class="servicios-section bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white py-20 px-6 md:px-12">
+  <div class="container mx-auto max-w-5xl text-center animate-fade-in">
+    <h2 class="text-4xl md:text-5xl font-extrabold tracking-wider uppercase mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 drop-shadow-lg">
+      ¿Quiénes somos?
+    </h2>
+
+    <p class="italic text-lg md:text-xl text-gray-300 mb-6 max-w-3xl mx-auto leading-relaxed">
+      “Nuestro enfoque es contribuir a la eficiencia, calidad, seguridad y sostenibilidad de los diferentes procesos.”
     </p>
-    <p class="descripcion descripcion-ampliada">
-      Somos una empresa familiar instalada en la provincia del Chaco. Benedicto Barreto fue quien sentó nuestras bases, nos enseñó el oficio y la pasión por el trabajo. Así, tres generaciones después, seguimos con el mismo compromiso, incorporando nuevas tecnologías en nuestra labor.
+
+    <p class="text-base md:text-lg text-gray-300 leading-relaxed max-w-4xl mx-auto">
+      Somos una empresa familiar instalada en la provincia del Chaco. <strong class="text-purple-400">Benedicto Barreto</strong> fue quien sentó nuestras bases, nos enseñó el oficio y la pasión por el trabajo. Así, tres generaciones después, seguimos con el mismo compromiso, incorporando <span class="text-pink-400 font-medium">nuevas tecnologías</span> en nuestra labor.
     </p>
   </div>
-</section>
-<!-- Sección principal -->
-<section id="productos" class="content-section">
-  <div class="container">
-    <h2>¿Qué realizamos?</h2> 
-    <p>Diseño, cálculo, montaje y mantenimiento de:</p> 
-    <div class="service-buttons">
-      <button onclick="toggleSection('ventilacion')">Sistemas de ventilación</button>
-      <button onclick="toggleSection('aire')">Sistemas de aire comprimido</button>
-      <button onclick="toggleSection('agua')">Cañerías de agua a presión</button>
-      <button onclick="toggleSection('metalurgia')">Metalúrgica en general</button>
+</div>
+
+  <!-- Redes Sociales -->
+  <div class="container mx-auto text-center mt-10">
+    <h2 class="text-3xl font-bold mb-6">¡Seguinos en nuestras redes!</h2>
+    <div class="flex justify-center gap-8">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram" class="hover:text-purple-400 transition">
+        <i class="fab fa-instagram text-4xl"></i>
+      </a>
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook" class="hover:text-purple-400 transition">
+        <i class="fab fa-facebook text-4xl"></i>
+      </a>
+      <!-- WhatsApp -->
+      <a href="https://wa.me/541234567890" target="_blank" aria-label="WhatsApp" class="hover:text-purple-400 transition">
+        <i class="fab fa-whatsapp text-4xl"></i>
+      </a>
+    </div>
+  </div>
+<!-- Galería Instagram -->
+   <div class="instagram-embeds-container">
+  <!-- Foto 1 -->
+<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/C_hGrSSMCpi/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/C_hGrSSMCpi/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver esta publicación en Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/C_hGrSSMCpi/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Una publicación compartida de Barreto Ingeniería (@bi.mant)</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+
+
+  <!-- Foto 2 -->
+<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DFEeZ4vOf_X/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DFEeZ4vOf_X/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver esta publicación en Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DFEeZ4vOf_X/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Una publicación compartida de Barreto Ingeniería (@bi.mant)</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+
+  <!-- Foto 3 -->
+<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/C-EGM9Ly3TL/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/C-EGM9Ly3TL/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver esta publicación en Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/C-EGM9Ly3TL/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Una publicación compartida de Barreto Ingeniería (@bi.mant)</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+
+  <!-- Foto 4 -->
+<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/C7SMPtrPq4m/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/C7SMPtrPq4m/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver esta publicación en Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/C7SMPtrPq4m/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Una publicación compartida de Barreto Ingeniería (@bi.mant)</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script></div>
+
+
+<section class="w-screen bg-gradient-to-r from-black via-gray-900 to-black p-12">
+  <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row gap-16 items-start"> <!-- Alineamos items arriba -->
+    <!-- Izquierda: Dirección y Mapa -->
+    <div class="flex-1 bg-gray-800 rounded-2xl shadow-xl p-8 flex flex-col">
+      <h3 class="text-4xl font-extrabold uppercase mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-center md:text-left drop-shadow-lg">
+        Nuestra Dirección
+      </h3>
+      <p class="mb-8 text-lg text-gray-300 text-center md:text-left">
+        Molina 865, Resistencia, Chaco, Argentina
+      </p>
+      <div class="flex-grow rounded-xl overflow-hidden shadow-2xl">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.280009900493!2d-58.98515418485513!3d-27.451534423735244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94424c8d1918e76b%3A0x88a2f6b3d0e8b5d!2sMolina%20865%2C%20Resistencia%2C%20Chaco%2C%20Argentina!5e0!3m2!1ses!2sar!4v1687954971350!5m2!1ses!2sar"
+          width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Derecha: Contacto -->
+    <div class="flex-1 bg-gray-800 rounded-2xl shadow-xl p-8 flex flex-col justify-start">
+      <h3 class="text-4xl font-extrabold uppercase mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-center md:text-left drop-shadow-lg">
+        Contacto
+      </h3>
+      <div class="space-y-8 text-gray-300 text-center md:text-left text-xl md:text-2xl font-semibold">
+        <p class="flex items-center justify-center md:justify-start gap-4 hover:text-purple-400 transition cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h2l3.6 7.59-1.35 2.44A11.36 11.36 0 0012 21a11.36 11.36 0 006.75-2.97l1.35-2.44L19 10h2M7 9v4h10V9M7 13v4h10v-4" />
+          </svg>
+          <a href="tel:+54912345678" class="underline">+54 9 362 470-9859</a>
+        </p>
+        <p class="flex items-center justify-center md:justify-start gap-4 hover:text-purple-400 transition cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 12H8m0 0l4-4m0 0l4 4m-4-4v8" />
+          </svg>
+          <a href="mailto:contacto@empresa.com" class="underline">bitman@outlook.com</a>
+        </p>
+        <p class="flex items-center justify-center md:justify-start gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3" />
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
+          </svg>
+          Lunes a Viernes: 8:00 - 18:00
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Secciones desplegables (fuera del contenedor anterior) -->
-<section id="ventilacion" class="service-section hidden">
-  <h2>Sistemas de ventilación</h2>
-  <div class="card-container">
-    <div class="card">Instalación de extractores</div>
-    <div class="card">Conductos industriales</div>
-    <div class="card">Sistemas de ventilación forzada</div>
-    <div class="card">Mantenimiento de ventilación</div>
-  </div>
+
+
+
 </section>
 
-<section id="aire" class="service-section hidden">
-  <h2>Sistemas de aire comprimido</h2>
-  <div class="card-container">
-    <div class="card">Instalación de compresores</div>
-    <div class="card">Redes de distribución</div>
-    <div class="card">Filtrado y secado de aire</div>
-    <div class="card">Reparación de líneas</div>
-  </div>
-</section>
+    <!-- Secciones de contenido -->
+<section id="productos" class="content-section hidden px-4 py-10 bg-gray-900 text-white">
+  <div class="max-w-screen-xl mx-auto">
+    <h3 class="text-4xl font-extrabold uppercase mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-center drop-shadow-lg">¿Que realizamos?</h3>
 
-<section id="agua" class="service-section hidden">
-  <h2>Cañerías de agua a presión</h2>
-  <div class="card-container">
-    <div class="card">Montaje de cañerías de acero</div>
-    <div class="card">Conexiones soldadas o bridadas</div>
-    <div class="card">Pruebas de presión</div>
-    <div class="card">Reemplazo de tramos dañados</div>
-  </div>
-</section>
+    <p class="text-center mb-6">Diseño, cálculo, montaje y mantenimiento de:</p>
 
-<section id="metalurgia" class="service-section hidden">
-  <h2>Metalúrgica en general</h2>
-  <div class="card-container">
-    <div class="card">Estructuras metálicas</div>
-    <div class="card">Soportes y bastidores</div>
-    <div class="card">Fabricación a medida</div>
-    <div class="card">Servicios de soldadura</div>
-  </div>
-</section>
+    <!-- Botones -->
+    <div class="service-buttons flex flex-wrap justify-center gap-4 mb-8">
+      <button onclick="mostrarCards('ventilacion')" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg transition">Ductos</button>
+      <button onclick="mostrarCards('aire')" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg transition">Instalaciones hidráulicas y neumaticas</button>
+      <button onclick="mostrarCards('agua')" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg transition">Metalúrgica industrial</button>
+      <button onclick="mostrarCards('metalurgia')" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg transition">Tableros de comando</button>
+    </div>
 
-
-
-
-
-    <section id="contacto" class="content-section">
-      <div class="container">
-        <h2>Contáctanos</h2>
-        <p>¿Tienes alguna consulta? No dudes en contactarnos, estaremos encantados de ayudarte.</p>
+    <!-- VENTILACION -->
+    <div id="ventilacion" class="cards-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="card bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+        <img src="imagenes/canerias.jpg" alt="Extractor" class="w-full h-40 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 flex-grow">
+          <h3 class="font-bold text-lg">Ductos</h3>
+          <p>zzzz</p>
+        </div>
       </div>
-    </section>
+      <div class="card bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+        <img src="imagenes/extratores.jpg" alt="Conductos" class="w-full h-40 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 flex-grow">
+          <h3 class="font-bold text-lg">transporte de material</h3>
+          <p>Fabricación de conductos metálicos.</p>
+        </div>
+      </div>
+      <div class="card bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+        <img src="imagenes/tube.jpg" alt="Forzada" class="w-full h-40 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 flex-grow">
+          <h3 class="font-bold text-lg">aire acondicionado</h3>
+          <p>Sistemas de ventilación forzada.</p>
+        </div>
+      </div>
+      <div class="card bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+        <img src="imagenes/tube.jpg" alt="Mantenimiento" class="w-full h-40 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 flex-grow">
+          <h3 class="font-bold text-lg">Refrigeración</h3>
+          <p>Instalación de sistemas a medida.</p>
+        </div>
+      </div>
+    </div>
 
-  </main>
+    <!-- AIRE -->
+    <div id="aire" class="cards-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 hidden">
+      <div class="card bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+        <img src="imagenes/extratores.jpg" alt="Compresores" class="w-full h-40 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 flex-grow">
+          <h3 class="font-bold text-lg">Compresores</h3>
+          <p>Instalación de compresores industriales.</p>
+        </div>
+      </div>
+      <div class="card bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+        <img src="imagenes/extratores.jpg" alt="Redes" class="w-full h-40 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 flex-grow">
+          <h3 class="font-bold text-lg">Redes</h3>
+          <p>Distribución de aire comprimido.</p>
+        </div>
+      </div>
+      <div class="card bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+        <img src="imagenes/extratores.jpg" alt="Filtrado" class="w-full h-40 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 flex-grow">
+          <h3 class="font-bold text-lg">Filtrado</h3>
+          <p>Sistemas de filtrado y secado.</p>
+        </div>
+      </div>
+      <div class="card bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+        <img src="imagenes/canerias.jpg" alt="Reparación" class="w-full h-40 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 flex-grow">
+          <h3 class="font-bold text-lg">Reparación</h3>
+          <p>Reparación de líneas de aire.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AGUA -->
+    <div id="agua" class="cards-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 hidden">
+      <div class="card bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+        <img src="imagenes/extratores.jpg" alt="Cañerías" class="w-full h-40 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 flex-grow">
+          <h3 class="font-bold text-lg">Cañerías</h3>
+          <p>Montaje de cañerías de acero.</p>
+        </div>
+      </div>
+      <div class="card bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+        <img src="imagenes/extratores.jpg" alt="Conexiones" class="w-full h-40 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 flex-grow">
+          <h3 class="font-bold text-lg">Conexiones</h3>
+          <p>Conexiones soldadas o bridadas.</p>
+        </div>
+      </div>
+      <div class="card bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+        <img src="imagenes/extratores.jpg" alt="Pruebas" class="w-full h-40 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 flex-grow">
+          <h3 class="font-bold text-lg">Pruebas</h3>
+          <p>Pruebas hidráulicas de presión.</p>
+        </div>
+      </div>
+      <div class="card bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+        <img src="imagenes/extratores.jpg" alt="Reemplazo" class="w-full h-40 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 flex-grow">
+          <h3 class="font-bold text-lg">Reemplazo</h3>
+          <p>Reemplazo de tramos dañados.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- METALURGIA -->
+    <div id="metalurgia" class="cards-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 hidden">
+      <div class="card bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+        <img src="imagenes/extratores.jpg" alt="Estructuras" class="w-full h-40 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 flex-grow">
+          <h3 class="font-bold text-lg">Estructuras</h3>
+          <p>Construcción de estructuras metálicas.</p>
+        </div>
+      </div>
+      <div class="card bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+        <img src="imagenes/extratores.jpg" alt="Soportes" class="w-full h-40 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 flex-grow">
+          <h3 class="font-bold text-lg">Soportes</h3>
+          <p>Fabricación de soportes a medida.</p>
+        </div>
+      </div>
+      <div class="card bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+        <img src="imagenes/canerias.jpg" alt="Fabricación" class="w-full h-40 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 flex-grow">
+          <h3 class="font-bold text-lg">Fabricación</h3>
+          <p>Fabricaciones especiales según planos.</p>
+        </div>
+      </div>
+      <div class="card bg-white text-black rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 flex flex-col">
+        <img src="imagenes/extratores.jpg" alt="Soldadura" class="w-full h-40 object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 flex-grow">
+          <h3 class="font-bold text-lg">Soldadura</h3>
+          <p>Servicios de soldadura industrial.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="proyectos" class="content-section hidden bg-black py-20 px-4">
+  <div class="max-w-7xl mx-auto text-center">
+    <h3 class="text-4xl font-extrabold uppercase mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-center drop-shadow-lg">Nuestros Trabajos</h3>
+
+    <p class="text-lg text-gray-600 mb-12">Mirá algunos de los proyectos que realizamos con pasión y precisión.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Imagen 1 -->
+      <button class="group overflow-hidden rounded-2xl shadow-xl focus:outline-none" onclick="openModal(0)">
+        <img src="imagenes/extratores.jpg" alt="Trabajo 1" class="w-full h-64 object-cover group-hover:scale-105 transition duration-300" />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800 group-hover:text-purple-600 transition">Instalación 1</h3>
+        </div>
+      </button>
+
+      <!-- Imagen 2 -->
+      <button class="group overflow-hidden rounded-2xl shadow-xl focus:outline-none" onclick="openModal(1)">
+        <img src="imagenes/imagen1.jpg" alt="Trabajo 2" class="w-full h-64 object-cover group-hover:scale-105 transition duration-300" />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800 group-hover:text-purple-600 transition">Instalación 2</h3>
+        </div>
+      </button>
+
+      <!-- Imagen 3 -->
+      <button class="group overflow-hidden rounded-2xl shadow-xl focus:outline-none" onclick="openModal(2)">
+        <img src="imagenes/ductos de ventilacion.jpg" alt="Trabajo 3" class="w-full h-64 object-cover group-hover:scale-105 transition duration-300" />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-gray-800 group-hover:text-purple-600 transition">Instalación 3</h3>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+    <button
+      onclick="closeModal()"
+      class="absolute top-6 right-6 text-white text-3xl font-bold hover:text-purple-400 transition"
+      aria-label="Cerrar galería"
+    >&times;</button>
+
+    <button
+      onclick="prevImage()"
+      class="absolute left-6 text-white text-4xl font-bold hover:text-purple-400 transition"
+      aria-label="Imagen anterior"
+    >&lsaquo;</button>
+
+    <img id="modalImage" src="" alt="Imagen ampliada" class="max-w-full max-h-[80vh] rounded-lg shadow-lg" />
+
+    <button
+      onclick="nextImage()"
+      class="absolute right-6 text-white text-4xl font-bold hover:text-purple-400 transition"
+      aria-label="Imagen siguiente"
+    >&rsaquo;</button>
+  </div>
+
+</section>
+
+<section id="contacto" class="hidden min-h-screen flex justify-center items-center">
+
+  <form class="contact-form" id="contactForm" method="POST" action="https://formsubmit.co/bimant.mantenimiento@gmail.com">
+    <h3 class="text-4xl font-extrabold uppercase mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-center drop-shadow-lg">Contactanos</h3>
+
+
+    <label for="name">Nombre completo *</label>
+    <input type="text" id="name" name="name" required placeholder="Tu nombre" />
+
+    <label for="email">Correo electrónico *</label>
+    <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com" />
+
+    <label for="message">Mensaje *</label>
+    <textarea id="message" name="message" required placeholder="Escribe tu mensaje..."></textarea>
+
+    <div class="captcha-container">
+      <span class="captcha-question">¿Cuánto es 3 + 4?</span>
+      <input type="text" id="captcha" name="captcha" class="captcha-input" required placeholder="7" />
+    </div>
+
+    <div id="formFeedback" class="error" style="display: none;"></div>
+
+    <button type="submit" class="btn-cotizar" style="width: 100%;">Enviar</button>
+
+    <!-- Config ocultos -->
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="hidden" name="_next" value="https://formsubmit.co/thankyou" />
+  </form>
+</section>
+
+
+
+
+
 
   <!-- Footer -->
   <footer>
@@ -189,5 +434,145 @@
 
   <!-- JS -->
   <script src="script.js"></script>
+
+ <script>
+  function mostrarCards(id) {
+    const contenedores = document.querySelectorAll('.cards-container');
+    
+    contenedores.forEach(c => c.classList.add('hidden')); // Oculta todos
+
+    const mostrar = document.getElementById(id);
+    if (mostrar) {
+      mostrar.classList.remove('hidden'); // Muestra el seleccionado
+      window.scrollTo({ top: mostrar.offsetTop - 100, behavior: 'smooth' });
+    }
+  }
+</script>
+
+
+<script>
+  function mostrarGaleria(e) {
+    e.preventDefault(); // evita que el navegador haga scroll automático
+    const seccion = document.getElementById('proyectos');
+    seccion.classList.remove('hidden'); // la muestra si está oculta
+    seccion.scrollIntoView({ behavior: 'smooth' }); // hace scroll suave
+  }
+</script>
+<script>
+  function mostrarSeccion(id) {
+  // Oculta todas las secciones principales, incluyendo redes sociales
+  const secciones = document.querySelectorAll("section.content-section, #contacto, #proyectos, #redes");
+
+  secciones.forEach(seccion => {
+    seccion.classList.add("hidden");
+  });
+
+  // Muestra la sección deseada
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.remove("hidden");
+    target.scrollIntoView({ behavior: "smooth" });
+  }
+
+  // Si la sección es "nosotros", mostrar también redes sociales
+  if (id === "nosotros") {
+    const redes = document.getElementById("redes");
+    if (redes) {
+      redes.classList.remove("hidden");
+    }
+  }
+}
+
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    mostrarSeccion('nosotros');
+  });
+</script>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const feedback = document.getElementById('formFeedback');
+
+  form.addEventListener('submit', function(event) {
+    feedback.style.display = 'none';
+    feedback.textContent = '';
+
+    // Validar captcha
+    const captchaValue = form.captcha.value.trim();
+    if(captchaValue !== '7') {
+      event.preventDefault();
+      feedback.style.display = 'block';
+      feedback.textContent = 'Error: Respuesta incorrecta. Por favor verifica que no eres un robot.';
+      form.captcha.focus();
+      return false;
+    }
+
+    // Validar campos requeridos con HTML5, si hay error el navegador lo mostrará automáticamente
+  });
+</script>
+<script>
+  const images = [
+    { src: 'imagenes/extratores.jpg', alt: 'Trabajo 1' },
+    { src: 'imagenes/imagen1.jpg', alt: 'Trabajo 2' },
+    { src: 'imagenes/ductos de ventilacion.jpg', alt: 'Trabajo 3' },
+  ];
+
+  let currentIndex = 0;
+  const modal = document.getElementById('galleryModal');
+  const modalImage = document.getElementById('modalImage');
+
+  function openModal(index) {
+    currentIndex = index;
+    modalImage.src = images[currentIndex].src;
+    modalImage.alt = images[currentIndex].alt;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden'; // Evitar scroll de fondo
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    modalImage.src = images[currentIndex].src;
+    modalImage.alt = images[currentIndex].alt;
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    modalImage.src = images[currentIndex].src;
+    modalImage.alt = images[currentIndex].alt;
+  }
+
+  // Cerrar modal al hacer click fuera de la imagen
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Navegación con teclas
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('hidden')) {
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'Escape') closeModal();
+    }
+  });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btnMenu = document.getElementById('btnMenu');
+  const menuNav = document.getElementById('menuNav');
+
+  btnMenu.addEventListener('click', () => {
+    menuNav.classList.toggle('hidden');
+  });
+});</script>
+
 </body>
 </html>
